@@ -1,0 +1,32 @@
+-------- SYNC ERROR ----------
+//downgrade database
+$ ./bin/console doctrine:migrations:migrate first -n
+
+$ symfony console doctrine:fixtures:load
+
+//make new migration
+$ ./bin/console make:migration
+
+//upgrade database
+$ ./bin/console doctrine:migrations:migrate -n
+
+----
+
+or, drop database, remove all migrations, fix code, make new migration
+//first migration version
+./bin/console doctrine:schema:drop --full-database [--force]
+./bin/console doctrine:schema:create --dump-sql
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-----------MIGRATION----------
+./bin/console make:migration
+./bin/console doctrine:migrations:migrate
+    (./bin/console do:mi:migrate)
+    >>'describe user' //shows user table in cli
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+doctrine:database:drop --force
+//drop all tables in the database
+doctrine:schema:drop --full-database
