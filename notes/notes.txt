@@ -1,0 +1,66 @@
+## Master ##
+=======
+## Feature ##
+
+git remote add origin https://github.com/benr242/BookieSymfony.git
+
+//if new checkout from GitHub
+composer install
+
+$yarn add bootstrap --dev
+
+composer require logger
+// maybe does nothing
+composer require security
+composer require symfony/webpack-encore-bundle
+
+
+./bin/console make:user
+// to add properties
+symfony console make:entity user
+
+//SERVER
+// server is installed by default
+composer require symfony/webpack-encore-bundle
+// START SERVER
+symfony server:start
+
+//GIT
+git tag -a v0.1 -m "start point"
+git show v0.1
+
+symfony console make:controller
+    >>Test makes TestController)
+
+$git tag #list tags
+$git tag v0.2 #creates new tag
+
+
+yarn add bootstrap --dev
+// jQuery is only required in versions prior to Bootstrap 5
+yarn add jquery @popperjs/core --dev
+
+composer require security
+composer require --dev symfony/profiler-pack (no new instal)
+
+//MIGRATION
+./bin/console make:migration
+./bin/console doctrine:migrations:migrate
+    (./bin/console do:mi:migrate)
+    >>'describe user' //shows user table in cli
+./bin/console doctrine:schema:drop --force --full-database
+
+composer require --dev orm-fixtures
+
+//FIXTURES
+     >>in default fixture, load method, replace type-hint with Doctrine\Persistence\ObjectManager
+    ./bin/console doctrine:fixtures:load
+
+//BRANCH
+#shows what branch im on
+$git branch
+#create and checkout new branch
+$git checkout -b <new-branch>
+$git checkout master #to come back
+#from 'main' branch
+$git merge <branch-name>
