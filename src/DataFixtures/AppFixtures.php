@@ -2,8 +2,12 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Leage;
+use App\Entity\Team;
+use App\Repository\LeageRepository;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+
 
 class AppFixtures extends Fixture
 {
@@ -12,12 +16,14 @@ class AppFixtures extends Fixture
         // $product = new Product();
         // $manager->persist($product);
 
+        $this->loadTeams($manager);
+
         $manager->flush();
     }
 
     protected function loadTeams(ObjectManager $manager)
     {
-        $league = new League();
+        $league = new Leage();
         $league->setSlug("NFL");
         $league->setName("Nationol Football League");
         $manager->persist($league);
