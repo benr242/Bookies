@@ -8,6 +8,12 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class BookieController extends AbstractController
 {
+    #[Route('/', name: 'home')]
+    public function home()
+    {
+        return $this->redirectToRoute('moneyline');
+    }
+
     #[Route('/bookie', name: 'bookie')]
     public function index(): Response
     {
