@@ -15,4 +15,12 @@ class BookieController extends AbstractController
             'controller_name' => 'BookieController',
         ]);
     }
+
+    #[Route('/moneyline', name: 'moneyline')]
+    public function moneyline(): Response
+    {
+        return $this->render('bookie/index.html.twig', [
+            'controller_name' => 'BookieController',
+        ]);
+    }
 }
