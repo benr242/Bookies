@@ -18,6 +18,9 @@ or, drop database, remove all migrations, fix code, make new migration
 ./bin/console doctrine:schema:create --dump-sql
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+change config/packages/doctrine.yaml
+	orm:mappings:App:type to 'attribute' (from 'annotation')
+
 -----------MIGRATION----------
 ./bin/console make:migration
 ./bin/console doctrine:migrations:migrate
