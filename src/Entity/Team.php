@@ -15,28 +15,28 @@ class Team
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private int $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $location;
+    private string $location;
 
     /**
      * @ORM\Column(type="string", length=4)
      */
-    private $slug;
+    private string $slug;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $name;
+    private string $name;
 
     /**
      * @ORM\ManyToOne(targetEntity=Leage::class, inversedBy="teams")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $league;
+    private Leage $league;
 
     public function getId(): ?int
     {

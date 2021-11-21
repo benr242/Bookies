@@ -17,22 +17,22 @@ class Leage
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private int $id;
 
     /**
      * @ORM\Column(type="string", length=4)
      */
-    private $slug;
+    private string $slug;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $name;
+    private string $name;
 
     /**
      * @ORM\OneToMany(targetEntity=Team::class, mappedBy="league")
      */
-    private $teams;
+    private Team $teams[];
 
     public function __construct()
     {
