@@ -32,7 +32,7 @@ class Leage
     /**
      * @ORM\OneToMany(targetEntity=Team::class, mappedBy="league")
      */
-    private Team $teams[];
+    private Team $teams;
 
     public function __construct()
     {
