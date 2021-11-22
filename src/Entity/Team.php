@@ -12,7 +12,7 @@ class Team
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
-    private Integer $id;
+    private $id;
 
     #[ORM\Column(type: 'string', length: 255)]
     private string $name;
@@ -22,6 +22,10 @@ class Team
 
     #[ORM\Column(type: 'string', length: 4)]
     private string $slug;
+
+    #[ORM\ManyToOne(targetEntity: League::class, inversedBy: 'teams')]
+    #[ORM\JoinColumn(nullable: false)]
+    private League $league;
 
     public function getId(): ?int
     {
@@ -60,6 +64,18 @@ class Team
     public function setSlug(string $slug): self
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function getLeague(): ?League
+    {
+        return $this->league;
+    }
+
+    public function setLeague(?League $league): self
+    {
+        $this->league = $league;
 
         return $this;
     }

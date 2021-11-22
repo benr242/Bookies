@@ -2,9 +2,9 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Leage;
+use App\Entity\League;
 use App\Entity\Team;
-use App\Repository\LeageRepository;
+use App\Repository\LeagueRepository;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
@@ -16,17 +16,29 @@ class AppFixtures extends Fixture
         // $product = new Product();
         // $manager->persist($product);
 
+        //$this->loadLeagues($manager);
         $this->loadTeams($manager);
 
         $manager->flush();
     }
 
-    protected function loadTeams(ObjectManager $manager)
+    protected function loadLeagues(ObjectManager $manager)
     {
-        $league = new Leage();
+        $league = new League();
         $league->setSlug("NFL");
         $league->setName("Nationol Football League");
         $manager->persist($league);
+        $manager->flush();;
+    }
+
+    protected function loadTeams(ObjectManager $manager)
+    {
+        $league = new League();
+        $league->setSlug("NFL");
+        $league->setName("National Football League");
+        $manager->persist($league);
+
+        //$leagueRepo =
 
         $team = new Team();
         $team->setSlug("NO");
