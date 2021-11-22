@@ -27,4 +27,10 @@ class Bookie
 
         return $impProb;
     }
+
+    public static function randomStatic(): int
+    {
+        $random = rand(0, 42);
+        return $random;
+    }
 }
