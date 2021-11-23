@@ -43,6 +43,16 @@ class LineConverter
         $this->dOdds = $this->dImpProb / ($this->dImpProb + $this->fImpProb);
     }
 
+    public function getfImpProb()
+    {
+        return $this->fImpProb;
+    }
+
+    public function getdImpProb()
+    {
+        return $this->dImpProb;
+    }
+
     public function getFodds(): float
     {
         return $this->fOdds;

@@ -21,11 +21,13 @@ class BookieController extends AbstractController
     {
         $random = Bookie::randomStatic();
 
-        $converter = new LineConverter(-222, 140);
+        $converter = new LineConverter(-250, 200);
 
         return $this->render('bookie/index.html.twig', [
             'controller_name' => 'BookieController',
             'random' => $random,
+            'fImpProb' => $converter->getfImpProb(),
+            'dImpProb' => $converter->getdImpProb(),
             'fOdds' => $converter->getFodds(),
             'dOdds' => $converter->getDodds(),
             'odds' => $converter->getFodds() + $converter->getDodds()
