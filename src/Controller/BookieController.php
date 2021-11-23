@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Odds\LineConverter;
 use App\Service\Bookie;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,9 +21,13 @@ class BookieController extends AbstractController
     {
         $random = Bookie::randomStatic();
 
+        $converter = new LineConverter(-180, 140);
+
         return $this->render('bookie/index.html.twig', [
             'controller_name' => 'BookieController',
             'random' => $random,
+            'fOdds' => $converter->getFodds(),
+            'dOdds' => $converter->getDodds(),
         ]);
     }
 
