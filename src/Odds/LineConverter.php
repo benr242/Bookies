@@ -39,8 +39,8 @@ class LineConverter
 
     public function setOdds()
     {
-        $this->fOdds = $this->fImpProb / ($this->fImpProb + $this->dImpProb);
-        $this->dOdds = $this->dImpProb / ($this->dImpProb + $this->fImpProb);
+        $this->fOdds = $this->fImpProb / ($this->fImpProb + $this->dImpProb) * 100;
+        $this->dOdds = $this->dImpProb / ($this->dImpProb + $this->fImpProb) * 100;
     }
 
     public function getfImpProb()
