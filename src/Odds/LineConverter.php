@@ -15,13 +15,13 @@ class LineConverter
 
     public function __construct(int $fLine, int $dLine)
     {
-        $this->fLine = $fLine;
+        $this->fLine = abs($fLine);
         $this->dLine = $dLine;
     }
 
     public function setLines(int $fLine, int $dLine)
     {
-        $this->fLine = $fLine;
+        $this->fLine = abs($fLine);
         $this->dLine = $dLine;
     }
 
