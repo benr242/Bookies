@@ -17,12 +17,18 @@ class LineConverter
     {
         $this->fLine = abs($fLine);
         $this->dLine = $dLine;
+
+        $this->setImpProb();
+        $this->setOdds();
     }
 
     public function setLines(int $fLine, int $dLine)
     {
         $this->fLine = abs($fLine);
         $this->dLine = $dLine;
+
+        $this->setImpProb();
+        $this->setOdds();
     }
 
     public function setImpProb()
@@ -35,5 +41,15 @@ class LineConverter
     {
         $this->fOdds = $this->fImpProb / ($this->fImpProb + $this->dImpProb);
         $this->dOdds = $this->dImpProb / ($this->dImpProb + $this->fImpProb);
+    }
+
+    public function getFodds(): float
+    {
+        return $this->fOdds;
+    }
+
+    public function getDodds(): float
+    {
+        return $this->dOdds;
     }
 }
