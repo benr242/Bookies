@@ -28,6 +28,7 @@ class BookieController extends AbstractController
             'random' => $random,
             'fOdds' => $converter->getFodds(),
             'dOdds' => $converter->getDodds(),
+            'odds' => $converter->getFodds() + $converter->getDodds()
         ]);
     }
 
