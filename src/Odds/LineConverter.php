@@ -80,4 +80,9 @@ class LineConverter
         $msq = $str;
         return $msq;
     }
+
+    public static function getAPer($a, $b)
+    {
+        return $a;
+    }
 }

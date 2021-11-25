@@ -46,6 +46,7 @@ class BookieController extends AbstractController
         //$converter->setLines(-100, 100);
 
         $test = LineConverter::hello(1044.234);
+        $fa = LineConverter::getAPer(-250, 200);
         //$do = LineConverter::getDpercent(-250, 200);
 
         return $this->render('bookie/index.html.twig', [
@@ -58,6 +59,7 @@ class BookieController extends AbstractController
             'dOdds' => $converter->getDodds(),
             'odds' => $converter->getFodds() + $converter->getDodds(),
             'test' => $test,
+            'fa' => $fa,
         ]);
     }
 }
