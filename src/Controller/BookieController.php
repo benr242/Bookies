@@ -45,7 +45,7 @@ class BookieController extends AbstractController
         $converter = new LineConverter(-250, 200);
         //$converter->setLines(-100, 100);
 
-        $test = LineConverter::hello("Ben");
+        $test = LineConverter::hello(1044.234);
         //$do = LineConverter::getDpercent(-250, 200);
 
         return $this->render('bookie/index.html.twig', [
