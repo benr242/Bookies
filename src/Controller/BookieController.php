@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Odds\LineConverter;
+use App\Odds\PairA;
 use App\Service\Bookie;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -47,6 +48,9 @@ class BookieController extends AbstractController
 
         $test = LineConverter::hello(1044.234);
         $fa = LineConverter::getAPer(-250, 200);
+
+        $myPair = new PairA(-250, 200);
+
         //$do = LineConverter::getDpercent(-250, 200);
 
         return $this->render('bookie/index.html.twig', [
