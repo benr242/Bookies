@@ -21,7 +21,7 @@ class BookieController extends AbstractController
     {
         $random = Bookie::randomStatic();
 
-        $converter = new LineConverter(-250, 200);
+        $converter = new LineConverter(-950, 650);
         //$converter->setLines(-100, 100);
 
         return $this->render('bookie/index.html.twig', [
@@ -45,6 +45,9 @@ class BookieController extends AbstractController
         $converter = new LineConverter(-250, 200);
         //$converter->setLines(-100, 100);
 
+        $test = LineConverter::hello("Ben");
+        //$do = LineConverter::getDpercent(-250, 200);
+
         return $this->render('bookie/index.html.twig', [
             'controller_name' => 'BookieController',
             'random' => $random,
@@ -54,6 +57,7 @@ class BookieController extends AbstractController
             'fOdds' => $converter->getFodds(),
             'dOdds' => $converter->getDodds(),
             'odds' => $converter->getFodds() + $converter->getDodds(),
+            'test' => $test,
         ]);
     }
 }
