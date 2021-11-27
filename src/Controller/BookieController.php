@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Odds\LineConverter;
 use App\Odds\PairA;
+use App\Odds\PairaLynes;
 use App\Service\Bookie;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,7 +24,7 @@ class BookieController extends AbstractController
         $random = Bookie::randomStatic();
 
 
-        $myPair = new PairA(-950, 659);
+        $myPair = new PairaLynes(-950, 650);
         $converter = new LineConverter(-950, 650);
         //$converter->setLines(-100, 100);
 
