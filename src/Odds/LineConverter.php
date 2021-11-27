@@ -4,6 +4,7 @@ namespace App\Odds;
 
 class LineConverter
 {
+    protected PairaLynes $lynes;
     protected int $fLine;
     protected int $dLine;
 
@@ -14,27 +15,36 @@ class LineConverter
     protected float $dOdds;
 
     //maybe a PairA here
-    public function __construct(int $fLine, int $dLine)
+    public function __construct(PairaLynes $lynes)
     {
-        $this->setLines($fLine, $dLine);
+        $this->lynes = $lynes;
+        $this->fLine = $lynes->getFavorite();
+        $this->dLine = $lynes->getDog();
+        
+        $this->setLines($this->lynes);
 
-        /*
-        $this->fLine = abs($fLine);
-        $this->dLine = $dLine;
-
-        $this->setImpProb();
-        $this->setOdds();
-        */
-    }
-
-    public function setLines(int $fLine, int $dLine)
-    {
-        $this->fLine = abs($fLine);
-        $this->dLine = $dLine;
+        $this->fLine = $this->lynes->getFavorite();
+        $this->dLine = $this->lynes->getDog();
 
         $this->setImpProb();
         $this->setOdds();
     }
+
+    public function setLines()
+    {
+        //$this->fLine = abs($fLine);
+        //$this->dLine = $dLine;
+
+        $this->setImpProb();
+        $this->setOdds();
+    }
+
+    /*
+    public function setLines(PairaLynes $myLynes)
+    {
+
+    }
+    */
 
     public function setImpProb()
     {

@@ -9,7 +9,7 @@ class PairaLynes
 
     public function __construct(int $favorite, int $dog)
     {
-        $this->favorite = $favorite;
+        $this->favorite = abs($favorite);
         $this->dog = $dog;
     }
 
