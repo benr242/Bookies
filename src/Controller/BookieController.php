@@ -22,6 +22,7 @@ class BookieController extends AbstractController
     {
         $random = Bookie::randomStatic();
 
+
         $converter = new LineConverter(-950, 650);
         //$converter->setLines(-100, 100);
 
@@ -42,14 +43,14 @@ class BookieController extends AbstractController
     public function moneyline(): Response
     {
         $random = Bookie::randomStatic();
+        $myPair = new PairA(-250, 200);
 
-        $converter = new LineConverter(-250, 200);
+        $converter = new LineConverter($myPair, -250, 200);
         //$converter->setLines(-100, 100);
 
-        $test = LineConverter::hello(1044.234);
-        $fa = LineConverter::getAPer(-250, 200);
 
-        $myPair = new PairA(-250, 200);
+        //$test = LineConverter::hello(1044.234);
+        $fa = LineConverter::getAPer($myPair, -250, 200);
 
         //$do = LineConverter::getDpercent(-250, 200);
 
@@ -62,7 +63,7 @@ class BookieController extends AbstractController
             'fOdds' => $converter->getFodds(),
             'dOdds' => $converter->getDodds(),
             'odds' => $converter->getFodds() + $converter->getDodds(),
-            'test' => $test,
+            //'test' => $test,
             'fa' => $fa,
         ]);
     }

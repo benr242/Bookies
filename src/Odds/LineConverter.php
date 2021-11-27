@@ -13,13 +13,18 @@ class LineConverter
     protected float $fOdds;
     protected float $dOdds;
 
+    //maybe a PairA here
     public function __construct(int $fLine, int $dLine)
     {
+        $this->setLines($fLine, $dLine);
+
+        /*
         $this->fLine = abs($fLine);
         $this->dLine = $dLine;
 
         $this->setImpProb();
         $this->setOdds();
+        */
     }
 
     public function setLines(int $fLine, int $dLine)
@@ -46,13 +51,13 @@ class LineConverter
     public static function getFpercent($a, $b): int
     {
         return self::getFodds();
-        return 100;
+        //return 100;
     }
 
     public static function getDpercent($a, $b): int
     {
         return self::getDodds();
-        return 100;
+        //return 100;
     }
 
     public function getfImpProb()
