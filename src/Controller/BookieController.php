@@ -31,6 +31,7 @@ class BookieController extends AbstractController
             'random' => $random,
             'fImpProb' => $converter->getfImpProb(),
             'dImpProb' => $converter->getdImpProb(),
+            'iProb' => $converter->getfImpProb() + $converter->getdImpProb(),
             'fOdds' => $converter->getFodds(),
             'dOdds' => $converter->getDodds(),
             'odds' => $converter->getFodds() + $converter->getDodds()

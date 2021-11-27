@@ -48,24 +48,12 @@ class LineConverter
         $this->dOdds = $this->dImpProb / ($this->dImpProb + $this->fImpProb) * 100;
     }
 
-    public static function getFpercent($a, $b): int
-    {
-        return self::getFodds();
-        //return 100;
-    }
-
-    public static function getDpercent($a, $b): int
-    {
-        return self::getDodds();
-        //return 100;
-    }
-
-    public function getfImpProb()
+    public function getfImpProb(): float
     {
         return $this->fImpProb;
     }
 
-    public function getdImpProb()
+    public function getdImpProb(): float
     {
         return $this->dImpProb;
     }
@@ -78,16 +66,5 @@ class LineConverter
     public function getDodds(): float
     {
         return $this->dOdds;
-    }
-
-    public static function hello($str)
-    {
-        $msq = $str;
-        return $msq;
-    }
-
-    public static function getAPer($a, $b)
-    {
-        return $a;
     }
 }
