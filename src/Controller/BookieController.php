@@ -23,6 +23,7 @@ class BookieController extends AbstractController
         $random = Bookie::randomStatic();
 
 
+        $myPair = new PairA(-950, 659);
         $converter = new LineConverter(-950, 650);
         //$converter->setLines(-100, 100);
 
@@ -34,7 +35,8 @@ class BookieController extends AbstractController
             'iProb' => $converter->getfImpProb() + $converter->getdImpProb(),
             'fOdds' => $converter->getFodds(),
             'dOdds' => $converter->getDodds(),
-            'odds' => $converter->getFodds() + $converter->getDodds()
+            'odds' => $converter->getFodds() + $converter->getDodds(),
+            'mypair' => $myPair->getA(),
         ]);
     }
 
