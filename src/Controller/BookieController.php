@@ -26,6 +26,9 @@ class BookieController extends AbstractController
 
         $myPair = new PairaLynes(-950, 650);
         $converter = new LineConverter($myPair);
+        $myPair2 = new PairaLynes(-190, 170);
+        $converter = new LineConverter($myPair2);
+
         //$converter->setLines(-100, 100);
 
         return $this->render('bookie/index.html.twig', [

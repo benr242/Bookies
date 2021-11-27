@@ -20,7 +20,7 @@ class LineConverter
         $this->lynes = $lynes;
         $this->fLine = $lynes->getFavorite();
         $this->dLine = $lynes->getDog();
-        
+
         $this->setLines($this->lynes);
 
         $this->fLine = $this->lynes->getFavorite();
@@ -30,10 +30,10 @@ class LineConverter
         $this->setOdds();
     }
 
-    public function setLines()
+    public function setLines(PairaLynes $lynes)
     {
-        //$this->fLine = abs($fLine);
-        //$this->dLine = $dLine;
+        $this->fLine = $lynes->getFavorite();
+        $this->dLine = $lynes->getDog();
 
         $this->setImpProb();
         $this->setOdds();
