@@ -14,7 +14,6 @@ class LineConverter
     protected float $fOdds;
     protected float $dOdds;
 
-    //maybe a PairA here
     public function __construct(PairaLynes $lynes)
     {
         //$this->lynes = $lynes;
