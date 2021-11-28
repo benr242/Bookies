@@ -31,6 +31,8 @@ class BookieController extends AbstractController
 
         //$converter->setLines(-100, 100);
 
+        $mytest = LineConverter::test(21);
+
         return $this->render('bookie/index.html.twig', [
             'controller_name' => 'BookieController',
             'random' => $random,
@@ -41,6 +43,7 @@ class BookieController extends AbstractController
             'dOdds' => $converter->getDodds(),
             'odds' => $converter->getFodds() + $converter->getDodds(),
             'mypair' => $myPair,
+            'mytest' => $mytest,
         ]);
     }
 

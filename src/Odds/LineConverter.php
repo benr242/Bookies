@@ -30,6 +30,11 @@ class LineConverter
         $this->setOdds();
     }
 
+    public static function test(int $testInt):int
+    {
+        return $testInt * 2;
+    }
+
     public function setLines(PairaLynes $lynes)
     {
         $this->fLine = $lynes->getFavorite();
