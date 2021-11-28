@@ -17,17 +17,17 @@ class LineConverter
     //maybe a PairA here
     public function __construct(PairaLynes $lynes)
     {
-        $this->lynes = $lynes;
-        $this->fLine = $lynes->getFavorite();
-        $this->dLine = $lynes->getDog();
+        //$this->lynes = $lynes;
+        //$this->fLine = $lynes->getFavorite();
+        //$this->dLine = $lynes->getDog();
 
-        $this->setLines($this->lynes);
+        $this->setLines($lynes);
 
-        $this->fLine = $this->lynes->getFavorite();
-        $this->dLine = $this->lynes->getDog();
+        //$this->fLine = $this->lynes->getFavorite();
+        //$this->dLine = $this->lynes->getDog();
 
-        $this->setImpProb();
-        $this->setOdds();
+        //$this->setImpProb();
+        //$this->setOdds();
     }
 
     public static function test(int $testInt):int
@@ -37,6 +37,7 @@ class LineConverter
 
     public function setLines(PairaLynes $lynes)
     {
+        $this->lynes = $lynes;
         $this->fLine = $lynes->getFavorite();
         $this->dLine = $lynes->getDog();
 
