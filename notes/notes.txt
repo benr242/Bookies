@@ -45,6 +45,8 @@ composer require --dev symfony/profiler-pack (no new instal)
 
 //MIGRATION
 ./bin/console make:migration
+//after manually removing property from entity
+./bin/console doctrine:migrations:diff
 ./bin/console doctrine:migrations:migrate
     (./bin/console do:mi:migrate)
     >>'describe user' //shows user table in cli

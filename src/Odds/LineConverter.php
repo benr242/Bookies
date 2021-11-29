@@ -2,7 +2,7 @@
 
 namespace App\Odds;
 
-class LineConverter
+class LineConverter implements Bet
 {
     protected PairaLynes $lynes;
     protected int $fLine;
