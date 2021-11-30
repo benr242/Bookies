@@ -4,6 +4,7 @@ namespace App\DataFixtures;
 
 use App\Entity\League;
 use App\Entity\Team;
+use App\Entity\User;
 use App\Repository\LeagueRepository;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
@@ -17,6 +18,7 @@ class AppFixtures extends Fixture
         // $manager->persist($product);
 
         //$this->loadLeagues($manager);
+        $this->loadUsers($manager);
         $this->loadTeams($manager);
 
         $manager->flush();
@@ -29,6 +31,64 @@ class AppFixtures extends Fixture
         $league->setName("Nationol Football League");
         $manager->persist($league);
         $manager->flush();;
+    }
+    protected function loadUsers(ObjectManager $manager)
+    {
+        $roles[] = 'ROLE_USER';
+        $myRoles = ['ROLE_USER', 'ROLE_ADMIN'];
+
+        $user = new User();
+        $user->setUsername("br");
+        $user->setRoles($myRoles);
+        $user->addRole('ROLE_HERO');
+        $user->setPassword("dummy");
+        $user->setStash(10000);
+        $user->setFirstName("Ben");
+        $user->setLastName("Rose");
+        $user->setEmail("dummy@gmail.com");
+        $manager->persist($user);
+
+        $user = new User();
+        $user->setUsername("jp");
+        $user->setRoles($roles);
+        $user->setPassword("dummy");
+        $user->setStash(9900);
+        $user->setFirstName("John");
+        $user->setLastName("Posey");
+        $user->setEmail("dummy@gmail.com");
+        $manager->persist($user);
+
+        $user = new User();
+        $user->setUsername("rz");
+        $user->setRoles($roles);
+        $user->setPassword("dummy");
+        $user->setStash(10000);
+        $user->setFirstName("Raj");
+        $user->setLastName("Zacharia");
+        $user->setEmail("dummy@gmail.com");
+        $manager->persist($user);
+
+        $user = new User();
+        $user->setUsername("nc");
+        $user->setRoles($roles);
+        $user->setPassword("dummy");
+        $user->setStash(10000);
+        $user->setFirstName("Nate");
+        $user->setLastName("Connelly");
+        $user->setEmail("dummy@gmail.com");
+        $manager->persist($user);
+
+        $user = new User();
+        $user->setUsername("nl");
+        $user->setRoles($roles);
+        $user->setPassword("dummy");
+        $user->setStash(10000);
+        $user->setFirstName("Nick");
+        $user->setLastName("Lermitte");
+        $user->setEmail("dummy@gmail.com");
+        $manager->persist($user);
+
+        $manager->flush();
     }
 
     protected function loadTeams(ObjectManager $manager)
