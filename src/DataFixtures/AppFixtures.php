@@ -20,14 +20,6 @@ class AppFixtures extends Fixture
         $manager->flush();
     }
 
-    protected function loadLeagues(ObjectManager $manager)
-    {
-        $league = new League();
-        $league->setSlug("NFL");
-        $league->setName("Nationol Football League");
-        $manager->persist($league);
-        $manager->flush();;
-    }
     protected function loadUsers(ObjectManager $manager)
     {
         $roles[] = 'ROLE_USER';
@@ -40,6 +32,47 @@ class AppFixtures extends Fixture
         $user->setPassword("dummy");
         $user->setStash(10000);
         $user->setFirstName("Ben");
+        $user->setLastName("Rose");
+        $user->setEmail("dummy@gmail.com");
+        $manager->persist($user);
+
+        $user = new User();
+        $user->setUsername("sr");
+        $user->setRoles($roles);
+        $user->addRole('ROLE_HERO');
+        $user->setPassword("dummy");
+        $user->setStash(10000);
+        $user->setFirstName("Stan");
+        $user->setLastName("Rose");
+        $user->setEmail("dummy@gmail.com");
+        $manager->persist($user);
+
+        $user = new User();
+        $user->setUsername("ir");
+        $user->setRoles($roles);
+        $user->setPassword("dummy");
+        $user->setStash(10000);
+        $user->setFirstName("Ivan");
+        $user->setLastName("Rose");
+        $user->setEmail("dummy@gmail.com");
+        $manager->persist($user);
+
+        $user = new User();
+        $user->setUsername("lr");
+        $user->setRoles($roles);
+        $user->setPassword("dummy");
+        $user->setStash(10000);
+        $user->setFirstName("Len");
+        $user->setLastName("Rose");
+        $user->setEmail("dummy@gmail.com");
+        $manager->persist($user);
+
+        $user = new User();
+        $user->setUsername("jr");
+        $user->setRoles($roles);
+        $user->setPassword("dummy");
+        $user->setStash(10000);
+        $user->setFirstName("Justin");
         $user->setLastName("Rose");
         $user->setEmail("dummy@gmail.com");
         $manager->persist($user);

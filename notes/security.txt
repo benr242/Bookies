@@ -1,0 +1,6 @@
+
+./bin/console make:user
+./bin/console make:entity User
+
+security.yaml
+
