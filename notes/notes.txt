@@ -18,6 +18,9 @@ composer require symfony/webpack-encore-bundle
 ./bin/console make:user
 // to add properties
 symfony console make:entity user
+//when errors from manual delete (probably)
+composer dump-autoload
+
 
 //SERVER
 // server is installed by default
