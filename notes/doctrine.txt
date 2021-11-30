@@ -33,3 +33,5 @@ change config/packages/doctrine.yaml
 doctrine:database:drop --force
 //drop all tables in the database
 doctrine:schema:drop --full-database
+
+./bin/console doctrine:migrations:diff
