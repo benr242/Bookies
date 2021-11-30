@@ -1,0 +1,4 @@
+
+//fix errors on 'make:user|entity'
+composer dump-autoload
+
