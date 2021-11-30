@@ -5,7 +5,10 @@ namespace App\Controller;
 use App\Odds\LineConverter;
 use App\Odds\PairA;
 use App\Odds\PairaLynes;
+use App\Repository\UserRepository;
 use App\Service\Bookie;
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -19,9 +22,14 @@ class BookieController extends AbstractController
     }
 
     #[Route('/bookie', name: 'bookie')]
-    public function index(): Response
+    public function index(EntityManagerInterface $em, UserRepository $ur): Response
     {
         $random = Bookie::randomStatic();
+
+        $users = $ur->findAll();
+        $me = $ur->findOneBy(
+            ['username' => "br"]
+        );
 
 
         $myPair = new PairaLynes(-950, 650);
@@ -45,6 +53,7 @@ class BookieController extends AbstractController
             'odds' => $converter->getFodds() + $converter->getDodds(),
             'mypair' => $myPair,
             'mytest' => $mytest,
+            'myname' => $me->getFirstName(),
         ]);
     }
 
