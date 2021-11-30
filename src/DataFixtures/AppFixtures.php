@@ -14,10 +14,6 @@ class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-        // $product = new Product();
-        // $manager->persist($product);
-
-        //$this->loadLeagues($manager);
         $this->loadUsers($manager);
         $this->loadTeams($manager);
 
