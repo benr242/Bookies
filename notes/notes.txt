@@ -13,7 +13,7 @@ composer require logger
 // maybe does nothing
 composer require security
 composer require symfony/webpack-encore-bundle
-
+composer require symfonycasts/verify-email-bundle
 
 ./bin/console make:user
 // to add properties
